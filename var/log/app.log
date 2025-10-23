@@ -1,0 +1,52 @@
+[2025-10-22T21:26:58.931611+02:00] api-slim4.INFO: Intento de login con credenciales {"username":"DSegovialc"} {"uid":"a3689b1"}
+[2025-10-22T21:28:20.159371+02:00] api-slim4.INFO: Intento de login con credenciales {"username":"DSegovialc"} {"uid":"1f5ab9a"}
+[2025-10-22T21:28:27.439420+02:00] api-slim4.INFO: Buscando paciente por RUT: 6693262-1 [] {"uid":"e86297d"}
+[2025-10-22T21:28:32.854233+02:00] api-slim4.INFO: Buscando paciente por RUT: 6693262-1 [] {"uid":"cfb8abc"}
+[2025-10-22T21:31:14.920177+02:00] api-slim4.INFO: Intento de login con credenciales {"username":"DSegovialc"} {"uid":"6e05b71"}
+[2025-10-22T21:41:27.515451+02:00] api-slim4.INFO: Intento de login con credenciales {"username":"DSegovialc"} {"uid":"b69e26f"}
+[2025-10-22T21:41:30.810242+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"dc63cf5"}
+[2025-10-22T21:41:30.811090+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"dc63cf5"}
+[2025-10-22T21:41:30.812354+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"dc63cf5"}
+[2025-10-22T21:41:32.547682+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"3401ae9"}
+[2025-10-22T21:41:32.548584+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"3401ae9"}
+[2025-10-22T21:41:32.549270+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"3401ae9"}
+[2025-10-22T21:54:37.455203+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"10e95c4"}
+[2025-10-22T21:54:37.458326+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"10e95c4"}
+[2025-10-22T21:54:37.459943+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"10e95c4"}
+[2025-10-22T21:55:31.434760+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"87d513d"}
+[2025-10-22T21:55:31.435956+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"87d513d"}
+[2025-10-22T21:55:31.436907+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"87d513d"}
+[2025-10-22T21:55:51.800411+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"a1296d7"}
+[2025-10-22T21:55:51.801286+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"a1296d7"}
+[2025-10-22T21:55:51.802309+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"a1296d7"}
+[2025-10-23T14:52:07.370911+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"2a2a2ec"}
+[2025-10-23T14:52:07.377590+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"2a2a2ec"}
+[2025-10-23T14:52:07.399786+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"2a2a2ec"}
+[2025-10-23T15:13:22.005388+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"a34ef4c"}
+[2025-10-23T15:13:22.010890+02:00] api-slim4.INFO: Servicio: Obteniendo todas las sucursales [] {"uid":"a34ef4c"}
+[2025-10-23T15:13:30.140731+02:00] api-slim4.INFO: Controlador: Petición GET /facility/10 [] {"uid":"a3b48d0"}
+[2025-10-23T15:13:30.142584+02:00] api-slim4.INFO: Servicio: Buscando sucursal por ID {"id":10} {"uid":"a3b48d0"}
+[2025-10-23T15:59:44.216466+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"1a48596"}
+[2025-10-23T15:59:44.217959+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"1a48596"}
+[2025-10-23T15:59:44.230326+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"1a48596"}
+[2025-10-23T16:05:31.347787+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"8da952a"}
+[2025-10-23T16:05:31.348944+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"8da952a"}
+[2025-10-23T16:07:46.205481+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"cb5f3fc"}
+[2025-10-23T16:07:46.207245+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"cb5f3fc"}
+[2025-10-23T16:08:35.525222+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"76c86ef"}
+[2025-10-23T16:08:35.529058+02:00] api-slim4.INFO: Servicio: Obteniendo todas las sucursales [] {"uid":"76c86ef"}
+[2025-10-23T16:09:46.599980+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"f89dadc"}
+[2025-10-23T16:09:46.600988+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"f89dadc"}
+[2025-10-23T16:20:19.142317+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/2 [] {"uid":"33a3993"}
+[2025-10-23T16:20:19.149142+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":2} {"uid":"33a3993"}
+[2025-10-23T16:20:48.785236+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/2 [] {"uid":"321dcc1"}
+[2025-10-23T16:20:48.786390+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":2} {"uid":"321dcc1"}
+[2025-10-23T16:24:07.264659+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/200 [] {"uid":"3d01a01"}
+[2025-10-23T16:24:07.266169+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":200} {"uid":"3d01a01"}
+[2025-10-23T16:24:07.271764+02:00] api-slim4.INFO: Servicio: Especialidad no encontrada {"id":200} {"uid":"3d01a01"}
+[2025-10-23T16:24:48.034374+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"4cc4888"}
+[2025-10-23T16:24:48.035178+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"4cc4888"}
+[2025-10-23T21:18:29.546300+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"4236433"}
+[2025-10-23T21:18:29.548994+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"4236433"}
+[2025-10-23T21:18:32.192778+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"8fb681e"}
+[2025-10-23T21:18:32.193685+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"8fb681e"}
