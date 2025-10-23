@@ -1,0 +1,27 @@
+{
+    "name": "samer/api_slim4",
+    "description": "Nueva API con Slim 4",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "antonmunozdonoso",
+            "email": "anton.munoz@almamedica.cl"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.4",
+        "slim/php-view": "^3.0",
+        "php-di/php-di": "^6.3",
+        "vlucas/phpdotenv": "^5.6",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1",
+        "firebase/php-jwt": "^6.4",
+        "monolog/monolog": "^2.10"
+    }
+}
