@@ -50,3 +50,18 @@
 [2025-10-23T21:18:29.548994+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"4236433"}
 [2025-10-23T21:18:32.192778+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"8fb681e"}
 [2025-10-23T21:18:32.193685+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"8fb681e"}
+[2025-10-24T17:39:58.427824+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"6b26731"}
+[2025-10-24T17:39:58.434242+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"6b26731"}
+[2025-10-24T17:40:03.902229+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"c7b23b3"}
+[2025-10-24T17:40:03.903693+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"c7b23b3"}
+[2025-10-24T17:40:11.742001+02:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"093a589"}
+[2025-10-24T17:40:11.743769+02:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"093a589"}
+[2025-10-24T17:40:11.750455+02:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"093a589"}
+[2025-10-24T18:26:43.353350+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"cf5f056"}
+[2025-10-24T18:26:43.360327+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"cf5f056"}
+[2025-10-24T18:28:40.292129+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"ea2fab3"}
+[2025-10-24T18:28:40.293338+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"ea2fab3"}
+[2025-10-24T18:28:41.829086+02:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"0b3a7cb"}
+[2025-10-24T18:28:41.830090+02:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"0b3a7cb"}
+[2025-10-24T18:28:43.856779+02:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"1c89bf7"}
+[2025-10-24T18:28:43.857692+02:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"1c89bf7"}
