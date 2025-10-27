@@ -2,7 +2,7 @@
 FROM composer:2 as vendor
 WORKDIR /app
 COPY composer.json composer.lock ./
-# Instala dependencias. Usamos --no-dev porque el servidor ya viene en la imagen base
+# Instala dependencias (sin dev, ya que el servidor viene de la base)
 RUN composer install --no-dev --optimize-autoloader
 
 # ---------------------------------------------------------------------
@@ -16,7 +16,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Habilita el módulo de reescritura de Apache
 RUN a2enmod rewrite
 
-# Copia nuestro archivo de configuración de Apache personalizado
+# Copia nuestro archivo de configuración personalizado de Apache
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Establece el directorio de trabajo
@@ -28,8 +28,9 @@ COPY --from=vendor /app/vendor ./vendor
 # Copia todo el código de tu aplicación
 COPY . .
 
-# ¡Importante! Establece la carpeta 'public' como la raíz del servidor
-ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+# ---> ¡IMPORTANTE! <---
+# Copia el .htaccess de la raíz (el que funciona en XAMPP)
+COPY .htaccess /var/www/html/.htaccess
 
 # (Opcional pero recomendado) Ajusta permisos
 RUN chown -R www-data:www-data /var/www/html

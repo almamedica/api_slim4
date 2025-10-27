@@ -70,3 +70,9 @@
 [2025-10-27T14:21:47.013462+01:00] api-slim4.INFO: Controlador: Petición GET /patient/6693262-1 [] {"uid":"cc1a595"}
 [2025-10-27T14:21:47.017417+01:00] api-slim4.INFO: Servicio: Buscando paciente por RUT {"rut":"6693262-1"} {"uid":"cc1a595"}
 [2025-10-27T14:21:47.036208+01:00] api-slim4.INFO: Servicio: Paciente encontrado {"rut":"6693262-1"} {"uid":"cc1a595"}
+[2025-10-27T14:33:17.888722+01:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"7a8b289"}
+[2025-10-27T14:33:17.894013+01:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"7a8b289"}
+[2025-10-27T14:51:20.514510+01:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"4dc3650"}
+[2025-10-27T14:51:20.522003+01:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"4dc3650"}
+[2025-10-27T15:11:50.610204+01:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"8c267ce"}
+[2025-10-27T15:11:50.617617+01:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"8c267ce"}

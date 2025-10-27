@@ -29,7 +29,9 @@ $dependencies($container);
 AppFactory::setContainer($container);
 $app = AppFactory::create();
 
-$app->setBasePath('/api_slim4');
+if (($_ENV['APP_ENV'] ?? 'development') === 'development') {
+    $app->setBasePath('/api_slim4');
+}
 
 // --- Middleware ---
 
