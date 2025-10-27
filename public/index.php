@@ -45,7 +45,7 @@ $app->addRoutingMiddleware();
 
 // Middleware para manejo de errores. Captura excepciones y muestra errores.
 // Es importante configurarlo según el entorno (desarrollo vs. producción).
-$displayErrorDetails = ($_ENV['APP_ENV'] ?? 'development') === 'development'; // Lee 'APP_ENV' desde .env
+$displayErrorDetails = true; // Lee 'APP_ENV' desde .env
 $logErrors = true; // Siempre es bueno loguear errores
 $logErrorDetails = ($_ENV['APP_ENV'] ?? 'development') === 'development'; // Loguear detalles solo en desarrollo
 
