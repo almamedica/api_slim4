@@ -3,10 +3,10 @@
 
 use DI\Container;
 use Psr\Container\ContainerInterface;
-use Monolog\Logger;              // Logging library
-use Monolog\Handler\StreamHandler;  // Handler to write logs to file
-use Monolog\Processor\UidProcessor; // Processor to add unique ID to logs
-use Psr\Log\LoggerInterface;        // Standard interface for logging
+use Monolog\Logger;              // Librería de registro (logging)
+use Monolog\Handler\StreamHandler;  // Manejador que escribe los registros en un archivo
+use Monolog\Processor\UidProcessor; // Procesador que agrega un ID único a cada registro
+use Psr\Log\LoggerInterface;        // Interfaz estándar para el registro de logs
 
 // Importar las clases de Repositorios y Servicios
 use App\Repositories\PatientRepository;
