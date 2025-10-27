@@ -82,3 +82,11 @@
 [2025-10-27T15:37:13.745088+01:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"e01ab4f"}
 [2025-10-27T15:43:11.739324+01:00] api-slim4.INFO: Controlador: Petición GET /facility [] {"uid":"4d298bf"}
 [2025-10-27T15:43:11.742912+01:00] api-slim4.INFO: Servicio: Obteniendo todas las especialidades [] {"uid":"4d298bf"}
+[2025-10-27T16:10:56.711679+01:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"223f239"}
+[2025-10-27T16:10:56.713329+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"223f239"}
+[2025-10-27T16:10:59.392961+01:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"f4ca35c"}
+[2025-10-27T16:10:59.393807+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"f4ca35c"}
+[2025-10-27T16:11:42.838014+01:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"107fc5e"}
+[2025-10-27T16:11:42.839608+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"107fc5e"}
+[2025-10-27T16:11:49.192685+01:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"3ccb900"}
+[2025-10-27T16:11:49.193835+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"3ccb900"}
