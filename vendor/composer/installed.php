@@ -3,7 +3,7 @@
         'name' => 'samer/api_slim4',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '65a7b64bb27888af9169dc5761eb9cfccdec98d3',
+        'reference' => 'edafcdb928b433cc913843ad2829b3d83f298d7c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -216,7 +216,7 @@
         'samer/api_slim4' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '65a7b64bb27888af9169dc5761eb9cfccdec98d3',
+            'reference' => 'edafcdb928b433cc913843ad2829b3d83f298d7c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
