@@ -31,7 +31,7 @@ $app = AppFactory::create();
 
 $app->setBasePath('/api_slim4');
 
-// --- Middleware ---
+// --- Middleware --- //
 
 // Middleware para parsear el cuerpo de las peticiones (JSON, form-data, etc.)
 // Debe ir antes del middleware de ruteo.
