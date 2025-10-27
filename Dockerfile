@@ -17,7 +17,15 @@ RUN docker-php-ext-install pdo pdo_mysql
 RUN a2enmod rewrite
 
 # Copia nuestro archivo de configuración personalizado de Apache
+# (Este archivo todavía dice *:80, pero el entrypoint.sh lo corregirá)
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# --- ¡NUEVO! ---
+# Copia el script de entrypoint que acabamos de crear
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+# Le da permisos de ejecución
+RUN chmod +x /usr/local/bin/entrypoint.sh
+# --- FIN NUEVO ---
 
 # Establece el directorio de trabajo
 WORKDIR /var/www/html
@@ -34,3 +42,8 @@ COPY .htaccess /var/www/html/.htaccess
 
 # (Opcional pero recomendado) Ajusta permisos
 RUN chown -R www-data:www-data /var/www/html
+
+# --- ¡NUEVO! ---
+# Define nuestro script como el punto de entrada.
+# Este script se ejecutará en lugar del CMD por defecto de la imagen.
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
