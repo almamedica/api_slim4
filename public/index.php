@@ -29,9 +29,7 @@ $dependencies($container);
 AppFactory::setContainer($container);
 $app = AppFactory::create();
 
-if (($_ENV['APP_ENV'] ?? 'development') === 'development') {
-    $app->setBasePath('/api_slim4');
-}
+$app->setBasePath('/api_slim4');
 
 // --- Middleware ---
 
@@ -45,7 +43,7 @@ $app->addRoutingMiddleware();
 
 // Middleware para manejo de errores. Captura excepciones y muestra errores.
 // Es importante configurarlo según el entorno (desarrollo vs. producción).
-//$displayErrorDetails = true; Produccion
+//$displayErrorDetails = true; Produccion para ver los log de error en 
 $displayErrorDetails = ($_ENV['APP_ENV'] ?? 'development') === 'development'; // Lee 'APP_ENV' desde .env
 $logErrors = true; // Siempre es bueno loguear errores
 $logErrorDetails = ($_ENV['APP_ENV'] ?? 'development') === 'development'; // Loguear detalles solo en desarrollo
