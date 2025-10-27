@@ -23,7 +23,7 @@ $dependencies = function (Container $container) {
     $container->set(LoggerInterface::class, function (ContainerInterface $c) {
         $settings = [
             'name' => 'api-slim4',
-            'path' => __DIR__ . '/../var/log/app.log', // Ruta al archivo de log
+            'path' => 'php://stderr', // Ruta al archivo de log
             'level' => Logger::DEBUG,               // Nivel mínimo para loguear (DEBUG muestra todo)
         ];
         $logger = new Logger($settings['name']);
