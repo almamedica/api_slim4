@@ -92,3 +92,5 @@
 [2025-10-27T16:11:49.193835+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"3ccb900"}
 [2025-10-27T18:08:00.519751+01:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"6ddb384"}
 [2025-10-27T18:08:00.522436+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"6ddb384"}
+[2025-10-27T18:15:36.586526+01:00] api-slim4.INFO: Controlador: Petición GET /speciality/20 [] {"uid":"bbc326a"}
+[2025-10-27T18:15:36.589125+01:00] api-slim4.INFO: Servicio: Buscando prestaciones por ID de especialidad {"id":20} {"uid":"bbc326a"}
