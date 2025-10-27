@@ -38,7 +38,7 @@ COPY . .
 
 # ---> ¡IMPORTANTE! <---
 # Copia el .htaccess de la raíz (el que funciona en XAMPP)
-//COPY .htaccess /var/www/html/.htaccess
+#COPY .htaccess /var/www/html/.htaccess
 
 # (Opcional pero recomendado) Ajusta permisos
 RUN chown -R www-data:www-data /var/www/html
