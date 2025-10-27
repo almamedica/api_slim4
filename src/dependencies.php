@@ -3,7 +3,7 @@
 
 use DI\Container;
 use Psr\Container\ContainerInterface;
-use Monolog\Logger;                 // Logging library
+use Monolog\Logger;              // Logging library
 use Monolog\Handler\StreamHandler;  // Handler to write logs to file
 use Monolog\Processor\UidProcessor; // Processor to add unique ID to logs
 use Psr\Log\LoggerInterface;        // Standard interface for logging
@@ -24,7 +24,7 @@ $dependencies = function (Container $container) {
         $settings = [
             'name' => 'api-slim4',
             'path' => __DIR__ . '/../var/log/app.log', // Ruta al archivo de log
-            'level' => Logger::DEBUG,                  // Nivel mínimo para loguear (DEBUG muestra todo)
+            'level' => Logger::DEBUG,               // Nivel mínimo para loguear (DEBUG muestra todo)
         ];
         $logger = new Logger($settings['name']);
 
@@ -33,6 +33,9 @@ $dependencies = function (Container $container) {
         $logger->pushProcessor($processor);
 
         // Definir dónde escribir los logs
+        // NOTA: En Cloud Run, los logs a STDOUT/STDERR son capturados automáticamente.
+        // Escribir a un archivo puede no ser la mejor estrategia en Cloud Run
+        // a menos que tengas un volumen montado, pero para debugging inicial está bien.
         $handler = new StreamHandler($settings['path'], $settings['level']);
         $logger->pushHandler($handler);
 
@@ -41,39 +44,50 @@ $dependencies = function (Container $container) {
 
     // --- Configuración de PDO (Base de Datos) ---
     $container->set(PDO::class, function (ContainerInterface $c) {
-        // Obtener credenciales desde variables de entorno (.env) con valores por defecto
+        // Obtener credenciales desde variables de entorno
         $db_user = $_ENV['DB_USER'] ?? 'root';
         $db_pass = $_ENV['DB_PASSWORD'] ?? '';
         $db_name = $_ENV['DB_NAME'] ?? 'test';
-        $instance_connection_name = $_ENV['DB_INSTANCE_CONNECTION_NAME'] ?? null; // Para Cloud Run
-        $socket_dir = '/cloudsql/'; // Directorio del socket en Cloud Run
+        
+        // Usamos DB_HOST para todo.
+        // En local, será '127.0.0.1' (o lo que tengas en .env)
+        // En Cloud Run, será la ruta '/cloudsql/...'
+        $db_host = $_ENV['DB_HOST'] ?? '127.0.0.1';
+        $db_port = $_ENV['DB_PORT'] ?? '3306';
+        
+        $dsn = '';
 
-        // Determinar si usar conexión por socket (Cloud Run) o host/puerto (Local/XAMPP)
-        if ($instance_connection_name) {
-             // DSN para Cloud SQL Socket
-             $dsn = sprintf('mysql:dbname=%s;unix_socket=%s%s;charset=utf8',
-                            $db_name, $socket_dir, $instance_connection_name);
+        // --- Lógica Corregida ---
+        // Comprueba si DB_HOST es una ruta de socket de Cloud SQL
+        if (str_starts_with($db_host, '/cloudsql/')) {
+            // DSN para Cloud SQL Socket
+            // $db_host ya contiene la ruta completa
+            $dsn = sprintf('mysql:dbname=%s;unix_socket=%s;charset=utf8',
+                            $db_name, $db_host);
         } else {
-             // DSN para conexión local estándar
-             $db_host = $_ENV['DB_HOST'] ?? '127.0.0.1'; // Usar 127.0.0.1 es a menudo más fiable que localhost
-             $db_port = $_ENV['DB_PORT'] ?? '3306';
-             $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8',
+            // DSN para conexión local estándar (usa el $db_host '127.0.0.1')
+            $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8',
                             $db_host, $db_port, $db_name);
         }
+        // --- Fin de la Lógica ---
 
         try {
             // Crear la instancia de PDO
             $pdo = new PDO($dsn, $db_user, $db_pass);
             // Configurar PDO para mayor seguridad y consistencia
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Lanzar excepciones en errores SQL
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); // Devolver arrays asociativos por defecto
-            $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // Usar preparaciones nativas (más seguro)
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); 
             return $pdo;
         } catch (\PDOException $e) {
             // Obtener el logger para registrar el error crítico
             $logger = $c->get(LoggerInterface::class);
-            $logger->critical('Error de conexión a la base de datos', ['exception' => $e]); // Registrar el error detallado
-            // Lanzar una excepción genérica para no exponer detalles al usuario
+            // Registramos el error real de PDO
+            $logger->critical('Error de conexión a la base de datos', [
+                'dsn_attempted' => $dsn, // Logueamos el DSN que se intentó usar
+                'error_message' => $e->getMessage()
+            ]); 
+            // Lanzar una excepción genérica para no exponer detalles
             throw new \RuntimeException('Error de conexión a la base de datos.');
         }
     });
@@ -88,12 +102,6 @@ $dependencies = function (Container $container) {
     $container->set(FacilityService::class, \DI\autowire());
     $container->set(SpecialityRepository::class, \DI\autowire());
     $container->set(SpecialityService::class, \DI\autowire());
-
-    // Puedes añadir más dependencias aquí a medida que tu aplicación crezca
-    // Ejemplo: Registrar un cliente HTTP si necesitas llamar a otras APIs
-    // $container->set(HttpClientInterface::class, function() {
-    //     return new GuzzleHttp\Client();
-    // });
 
 }; // Fin de la función anónima
 
